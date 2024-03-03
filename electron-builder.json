@@ -1,0 +1,34 @@
+{
+    "appId": "electron-fastapi-vue-element-plus",
+    "asar": false,
+    "directories": {
+        "output": "dist"
+    },
+    "nsis": {
+        "oneClick": false,
+        "perMachine": false,
+        "allowToChangeInstallationDirectory": true,
+        "shortcutName": "electron-fastapi-vue-element-plus"
+    },
+    "win": {
+        "target": "nsis"
+    },
+    "linux":  {
+        "target": ["snap"]
+    },
+    "files": [
+        "build/electron/**/*",
+        "build/backend/**/*",
+        "build/frontend/**/*",
+        "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+        "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+        "!**/node_modules/*.d.ts",
+        "!**/node_modules/.bin",
+        "!src",
+        "!config",
+        "!README.md",
+        "!scripts",
+        "!build/renderer",
+        "!dist"
+    ]
+}
