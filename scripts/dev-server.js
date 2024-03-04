@@ -9,6 +9,7 @@ const Electron = require('electron');
 const compileTs = require('./private/tsc');
 const FileSystem = require('fs');
 const { EOL } = require('os');
+const treeKill = require('tree-kill');
 
 let viteServer = null;
 let electronProcess = null;
@@ -128,6 +129,12 @@ function copy(path) {
 
 function stop() {
     viteServer.close();
+    if(backendProcess) {
+        treeKill(backendProcess.pid)
+    }
+    if(electronProcess){
+        treeKill(electronProcess.pid)
+    }
     process.exit();
 }
 

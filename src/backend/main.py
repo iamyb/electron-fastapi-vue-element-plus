@@ -46,5 +46,5 @@ if __name__ == "__main__":
     uvicorn.run("__main__:app",
                 host="127.0.0.1",
                 port=8888,
-                reload=True,
+                # reload=True,
                 log_config="uvicorn_log.ini")
